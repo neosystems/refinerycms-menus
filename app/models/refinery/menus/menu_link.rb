@@ -7,8 +7,9 @@ module Refinery
       attr_accessible :parent_id, :refinery_page_id, :refinery_menu_id, :resource, :resource_id, :resource_type,
                       :title_attribute, :custom_url, :label, :menu, :id_attribute, :class_attribute
 
-      belongs_to :menu, :class_name => '::Refinery::Menus::Menu', :foreign_key => :refinery_menu_id
+      belongs_to :menu, :class_name => '::Refinery::Menus::Menu', :foreign_key => :refinery_menu_id      
       belongs_to :resource, :polymorphic => true
+      belongs_to :image, :class_name => '::Refinery::Image'
 
       # Docs for acts_as_nested_set https://github.com/collectiveidea/awesome_nested_set
       # rather than :delete_all we want :destroy

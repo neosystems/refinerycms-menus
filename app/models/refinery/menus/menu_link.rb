@@ -16,9 +16,8 @@ module Refinery
       acts_as_nested_set :dependent => :destroy
 
       validates :menu, :presence => true
-      validates :label, :presence => true
 
-      before_validation :set_label
+      #before_validation :set_label
 
       def self.find_all_of_type(type)
         # find all resources of the given type, determined by the configuration

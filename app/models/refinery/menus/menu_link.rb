@@ -1,6 +1,7 @@
 module Refinery
   module Menus
     class MenuLink < Refinery::Core::BaseModel
+      translates :label
       self.table_name = "refinery_menus_links"
       
       attr_accessible :parent_id, :refinery_page_id, :refinery_menu_id, :resource, :resource_id, :resource_type,

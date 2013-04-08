@@ -8,11 +8,11 @@
   <%= f.text_field :label %>
 </div>
 
-<% if Refinery::Menus.html_attributes %>
-	<div class="field">
-	  <%= f.label :title_attribute %>
-	  <%= f.text_field :title_attribute %>
-	</div>
+<%# if Refinery::Menus.html_attributes %>
+  <div class="field">
+    <%= f.label :title_attribute %>
+    <%= f.text_field :title_attribute %>
+  </div>
 
   <div class="field">
     <%= f.label :id_attribute, t('id_attribute', :scope => 'refinery.menus.admin.menu_links') %>
@@ -23,4 +23,14 @@
     <%= f.label :class_attribute %>
     <%= f.text_field :class_attribute %>
   </div>
-<% end %>
+<%# end %>
+  <div class="field">
+    <%= f.label :image_front, t('refinery.menu.admin.image_front') %>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :image_front_id,
+               :image => menu_link.image_front,
+               :toggle_image_display => false,
+               :description => t('refinery.menu.admin.image_front')
+    %>
+  </div>

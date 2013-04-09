@@ -41,7 +41,7 @@ module Refinery
         if label.blank?
           if custom_link?
             begin
-              self.label = custom_url.match(/(\w+)\.\w+$/).captures.join.titleize
+              self.label = custom_url.match(/(\w+)\.\w+$/).captures.join
             rescue
               self.label = custom_url
             end
@@ -64,7 +64,7 @@ module Refinery
       end
 
       def type_name
-        resource_type.titleize
+        resource_type
       end
 
       def custom_link?

@@ -18,6 +18,7 @@ module Refinery
       validates :menu, :presence => true
 
       #before_validation :set_label
+      default_scope includes(:translations)
 
       def self.find_all_of_type(type)
         # find all resources of the given type, determined by the configuration
